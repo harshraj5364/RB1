@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Scrapbook ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#f1f6fc;--b:#e3edf8;--c:#dbe6f5;--ink:#4a5f7a;--hd:#e0527f;--pc:#7f95b0;--f1:#f5b5cc;--f2:#bcd6f2}
+.nb{display:grid;grid-template-columns:1fr 1fr;width:min(860px,94vw);background:#fbf7ef;border-radius:10px;box-shadow:0 30px 60px -25px rgba(40,30,20,.55);position:relative;text-align:left;animation:opn 1.3s cubic-bezier(.2,.9,.2,1) both}
+@keyframes opn{from{transform:perspective(900px) rotateX(40deg) scale(.7);opacity:0}}
+.nb>div{padding:2.2rem 1.8rem;min-height:340px}
+.nb::after{content:'';position:absolute;left:50%;top:5%;bottom:5%;width:20px;translate:-50% 0;background:radial-gradient(circle,#f4f4f4 0 5px,#8a8a8a 6px 7px,transparent 8px) 0 0/100% 16.66%}
+.big{font:700 clamp(5rem,16vw,9rem)/1 'Caveat',cursive;color:#f06aa0}
+.tag{display:inline-block;background:#fde68a;padding:.2rem .8rem;rotate:-6deg;font:700 1.5rem 'Caveat',cursive;color:#7a4a10;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.nb p{font:500 clamp(1.4rem,2.6vw,1.9rem)/1.5 'Caveat',cursive}
+.pp{width:72%;margin:0 auto}
+@media(max-width:640px){.nb{grid-template-columns:1fr}.nb::after{display:none}}
+.pp{position:relative;width:200px;background:#fff;padding:8px 8px 30px;box-shadow:0 12px 24px -12px rgba(0,0,0,.5);rotate:4deg}.pp img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.pp::before{content:'';position:absolute;top:-12px;left:50%;width:90px;height:26px;translate:-50% 0;rotate:-4deg;background:rgba(255,226,120,.8)}
+</style></head><body data-bg="gingham" data-p="18"><main>
+<p class="cap rise">a page from the scrapbook</p>
+<div class="nb"><div><div class="big"><span id="ag">20</span> 🧁</div><p><b>Happy birthday, Riya!</b></p><p>Sometimes you make being a friend feel like a gift, just by being you.</p></div><div><div class="pp"><img id="im" alt=""></div><p style="text-align:center;margin-top:1.4rem"><span class="tag">favourite person</span></p></div></div>
+<button class="next" data-after="4500">turn the page</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const d0=new Date(),y0=d0.getFullYear();document.getElementById('ag').textContent=(d0>new Date(y0,0,20)?y0+1:y0)-2007;
+pic(CFG.polaroids[0].src,0,s=>document.getElementById('im').src=s);
+</script></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Happy Birthday ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fbf4e6;--b:#f6e8d4;--c:#f3dcc4;--ink:#6a3a4a;--hd:#c2185b;--pc:#b07a8a;--f1:#f48fb1;--f2:#fbd57a}
+.st{display:none;flex-direction:column;align-items:center;gap:1rem;min-height:72vh;justify-content:center}.st.on{display:flex}
+#hg{width:150px;filter:drop-shadow(0 12px 18px rgba(179,23,79,.45));animation:pl 1.6s ease-in-out infinite}@keyframes pl{50%{scale:1.1}}
+#bd2{width:94vw;max-width:1100px;padding:2rem 0;background:linear-gradient(90deg,#ee4d86,#a50e47);rotate:-3deg;animation:bn 1s cubic-bezier(.2,.9,.2,1) both;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+@keyframes bn{from{translate:-110vw 0}}
+#bd2 span{font:700 clamp(4.5rem,20vw,13rem)/1 'Playfair Display',serif;color:#f4e8de;text-shadow:0 6px 0 rgba(0,0,0,.18);animation:sp 1s cubic-bezier(.2,.9,.2,1) both}
+#bd2 span+span{animation-delay:.9s;font-size:clamp(3.4rem,15vw,10rem)}
+@keyframes sp{from{opacity:0;translate:0 60%}}
+#tr{width:min(340px,80vw);overflow:visible}
+#tr .br{fill:none;stroke:#4a2a2a;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dr 2.2s ease-out forwards}
+.ht{transform-box:fill-box;transform-origin:center;scale:0;animation:hp .7s cubic-bezier(.3,1.6,.5,1) forwards}@keyframes hp{to{scale:1}}
+.sc{font:700 clamp(3rem,11vw,7rem)/1.1 'Dancing Script',cursive;color:#c2185b;text-shadow:0 0 18px rgba(194,24,91,.35)}
+#cd{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(.8rem,3vw,2rem)}
+.t{min-width:clamp(78px,17vw,170px);padding:1rem .6rem;border:2px dashed var(--hd);border-radius:255px 18px 225px 18px/18px 225px 18px 255px;background:rgba(255,255,255,.5)}
+.t b{display:block;font:700 clamp(2.6rem,8vw,5.4rem)/1 'Caveat',cursive;color:var(--hd)}.t small{font-size:1.05rem}
+.card{display:flex;flex-direction:column;gap:1.2rem}
+</style></head><body data-bg="bokeh" data-p="10"><main>
+<section class="st on" id="s1"><svg id="hg" viewBox="0 0 100 100"><defs><radialGradient id="hgr" cx="35%" cy="30%"><stop offset="0" stop-color="#ffd0dc"/><stop offset=".45" stop-color="#ee5a86"/><stop offset="1" stop-color="#b3174f"/></radialGradient></defs><path d="M50 88C10 58 8 28 28 20C40 15 48 22 50 30C52 22 60 15 72 20C92 28 90 58 50 88Z" fill="url(#hgr)"/></svg><p class="cap">a little something for you</p><p class="cap" style="font-size:2rem">make a wish…</p></section>
+<section class="st" id="s2"><div id="bd2"><span>Happy</span><span>Birthday</span></div></section>
+<section class="st" id="s3"><p class="cap">…make it count</p><svg id="tr" viewBox="0 0 320 380"></svg><h1 class="sc rise" style="--i:3">Happy Birthday</h1><p class="cap rise" style="--i:4">here's to a year that blooms</p><p class="cap rise" style="--i:5">19 January, the day the world got a little brighter</p><div class="card rise" style="--i:6"><p class="cap" id="cp">counting down to your day</p><div id="cd"></div></div></section>
+<button class="next" data-hold>turn the page</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+function tree(){const t=document.getElementById('tr');if(t.dataset.d)return;t.dataset.d=1;
+const br=[['M160 360C160 300 158 250 160 200',9],['M160 250C140 230 110 215 80 170',6],['M160 235C185 215 215 200 245 160',6],['M160 215C150 180 128 150 112 110',5],['M160 210C172 175 196 145 210 105',5],['M160 195C158 160 160 130 160 95',4],['M110 205C95 190 70 185 55 150',3],['M212 195C228 180 252 176 266 142',3]];
+let h=br.map(([d,w],i)=>`<path class="br" pathLength="1" d="${d}" stroke-width="${w}" style="animation-delay:${i*.25}s"/>`).join('');
+const C=['#e9577f','#f48fb1','#f7a8c0','#f5b94a','#fbd57a','#d94670'];let n=0;
+while(n<150){const x=R(-1.25,1.25),y=R(-1.25,1.25);if(Math.pow(x*x+y*y-1,3)-x*x*y*y*y<=0){n++;h+=`<path class="ht" d="M0 3C-5-2-5-8 0-6C5-8 5-2 0 3Z" fill="${P(C)}" transform="translate(${(160+x*92).toFixed(1)} ${(105-y*84).toFixed(1)}) rotate(${R(-40,40).toFixed(0)}) scale(${R(1.3,2.2).toFixed(2)})" style="animation-delay:${(2.2+n*.018+R(0,.4)).toFixed(2)}s"/>`}}
+t.innerHTML=h}
+const S=[...document.querySelectorAll('.st')];let ks=0;
+const step=()=>{S.forEach((e,i)=>e.classList.toggle('on',i==ks));if(ks==2){tree();petals(40);setTimeout(()=>nx.classList.add('show'),7500)}};
+const at=(q,ms)=>setTimeout(()=>{if(ks<q){ks=q;step()}},ms);at(1,3200);at(2,6400);
+S.forEach(e=>e.onclick=()=>{if(ks<2){ks++;step()}});
+const n=new Date(),td=n.getMonth()==0&&n.getDate()==19;let T=new Date(n.getFullYear(),0,19);if(!td&&n>T)T=new Date(n.getFullYear()+1,0,19);
+const cd=document.getElementById('cd');
+if(td)document.getElementById('cp').remove();
+cd.innerHTML=td?'<h2>Today is your day! 🎂</h2>':['days','hours','minutes','seconds'].map(l=>`<div class="t"><b>00</b><small>${l}</small></div>`).join('');
+const bs=cd.querySelectorAll('b');
+(function k(){if(td)return;const d=Math.max(0,T-new Date());[d/864e5,d/36e5%24,d/6e4%60,d/1e3%60].forEach((v,i)=>{const s=String(Math.floor(v)).padStart(2,'0');if(bs[i].textContent!=s){bs[i].textContent=s;bs[i].animate([{transform:'translateY(-14px)',opacity:.2},{transform:'none',opacity:1}],300)}});setTimeout(k,1000)})();
+</script></body></html>

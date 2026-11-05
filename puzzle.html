@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Restoration desk ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#eef7ff;--b:#dcecfb;--c:#e3e0fb;--ink:#44607a;--hd:#3f7fc4;--pc:#7a92ad;--f1:#b5d6f5;--f2:#f5c6e0}
+#pz{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;width:min(360px,80vw);padding:10px;background:#fff;border:3px solid var(--hd);border-radius:6px;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.pc{aspect-ratio:1;cursor:pointer;transition:scale .2s}.pc.s{outline:4px solid var(--hd);scale:.93}
+</style></head><body data-bg="cream" data-p="18"><main>
+<p class="cap rise">room four, the restoration desk</p>
+<h2 class="rise" style="--i:1">This photo fell apart.</h2>
+<p class="cap rise" style="--i:2">put the pieces back in order. tap two pieces to swap them.</p>
+<div id="pz" class="rise" style="--i:3"></div>
+<p class="cap" id="st">moves: 0</p>
+<button class="btn" id="pk">hold to peek</button>
+<button class="next" data-hold>onward</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const pz=document.getElementById('pz'),st=document.getElementById('st'),pk=document.getElementById('pk'),K=[...Array(9).keys()];let src,o=[...K],sel=-1,mv=0,t0=0,dn=0;
+do{o.sort(()=>Math.random()-.5)}while(o.every((v,i)=>v==i));
+const ren=p=>pz.innerHTML=(p?K:o).map((t,i)=>`<div class="pc${i==sel&&!p?' s':''}" data-i="${i}" style="background:url('${src}') ${t%3*50}% ${(t/3|0)*50}%/300% 300%"></div>`).join('');
+const tick=()=>{const s=t0?Math.floor((Date.now()-t0)/1000):0;st.textContent=dn?'Put back together, just like us ✿':`moves: ${mv}    time: ${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`};
+pz.onclick=e=>{const c=e.target.closest('.pc');if(!c||dn)return;const i=+c.dataset.i;if(sel<0)sel=i;else{if(sel!=i){[o[sel],o[i]]=[o[i],o[sel]];mv++;t0=t0||Date.now()}sel=-1;if(o.every((v,j)=>v==j)){dn=1;petals(40,true);nx.classList.add('show')}}ren();tick()};
+setInterval(()=>{if(!dn)tick()},1000);
+pk.onpointerdown=()=>ren(1);pk.onpointerup=pk.onpointerleave=()=>ren();
+pic(CFG.puzzle,2,s=>{src=s;ren()});
+</script></body></html>

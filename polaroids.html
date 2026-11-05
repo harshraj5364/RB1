@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Memories ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff4e6;--b:#fde6d0;--c:#f8d9c6;--ink:#7a5038;--hd:#b8552f;--pc:#a58870;--f1:#f6c79a;--f2:#f2a99a}
+#pl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.8rem 1.2rem;width:100%}
+.po{position:relative;background:#fff;padding:10px 10px 40px;box-shadow:0 14px 28px -14px rgba(60,30,10,.5);rotate:var(--r);translate:0 var(--y);transition:rotate .35s,scale .35s;cursor:pointer}
+.po:hover{rotate:0deg;scale:1.06;z-index:3}.po img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.po span{position:absolute;left:0;right:0;bottom:8px;font:600 1.2rem 'Caveat',cursive;color:var(--ink)}
+#lb{position:fixed;inset:0;z-index:40;background:rgba(40,20,10,.65);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .4s}
+#lb.on{opacity:1;pointer-events:auto}#lb .po{width:min(440px,86vw);rotate:-2deg}
+</style></head><body data-bg="peach" data-p="18"><main>
+<p class="cap rise">a little wall of memories</p>
+<h2 class="rise" style="--i:1">Tap a photo to see it closer</h2>
+<div id="pl"></div>
+<div id="lb"></div>
+<button class="next" data-hold>turn the page</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const L8=CFG.polaroids,pl=document.getElementById('pl'),lb=document.getElementById('lb'),seen=new Set();
+L8.forEach((p,i)=>{const f=document.createElement('figure');f.className='po rise';f.style.cssText=`--r:${R(-6,6).toFixed(1)}deg;--y:${R(-14,14).toFixed(0)}px;--i:${i%4+2}`;f.innerHTML=`<img alt=""><span>${p.cap}</span>`;pic(p.src,i,s=>f.firstChild.src=s);
+f.onclick=()=>{lb.innerHTML=`<figure class="po"><img src="${f.firstChild.src}" alt=""><span>${p.cap}</span></figure>`;lb.classList.add('on');seen.add(i);if(seen.size>=Math.min(4,L8.length))nx.classList.add('show')};pl.appendChild(f)});
+lb.onclick=()=>lb.classList.remove('on');
+</script></body></html>

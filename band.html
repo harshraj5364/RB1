@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The band ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fffbea;--b:#fff0cf;--c:#ffe2d2;--ink:#7a5a3a;--hd:#d9822b;--pc:#a88a64;--f1:#ffd08a;--f2:#f7a8b8}
+svg#bd{width:min(320px,70vw);overflow:visible}
+#bd .s{fill:none;stroke-width:15;stroke-dasharray:.0278 .0556;transform:rotate(-90deg);transform-origin:100px 100px}
+#mc{fill:none;stroke:#fff;stroke-width:40;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s ease-in-out;transform:rotate(-90deg);transform-origin:100px 100px}
+.on #mc{stroke-dashoffset:0}
+#bow{font-size:38px;opacity:0;transition:opacity .8s 2.4s}.on #bow{opacity:1}
+.on .s{animation:rt 24s linear infinite}@keyframes rt{to{transform:rotate(270deg)}}
+</style></head><body data-bg="cream" data-p="18"><main>
+<p class="cap rise">room one</p>
+<h1 data-s>First, your friendship band.</h1>
+<p class="cap rise" id="t" style="--i:6">This one was made for you. Tap the button to tie it on.</p>
+<svg id="bd" viewBox="0 0 200 200"><defs><mask id="mk"><circle id="mc" pathLength="1" cx="100" cy="100" r="64"/></mask></defs><g mask="url(#mk)"><circle class="s" pathLength="1" cx="100" cy="100" r="64" stroke="#f7a8b8"/><circle class="s" pathLength="1" cx="100" cy="100" r="64" stroke="#ffd08a" stroke-dashoffset="-.0278"/><circle class="s" pathLength="1" cx="100" cy="100" r="64" stroke="#d9822b" stroke-dashoffset="-.0556"/></g><text id="bow" x="100" y="40" text-anchor="middle">🎀</text></svg>
+<button class="btn" id="tie">Tie it on</button>
+<button class="next" data-hold>next room</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+document.getElementById('tie').onclick=function(){this.remove();document.getElementById('bd').classList.add('on');document.getElementById('t').textContent='There. Now it is yours, and it never comes off.';petals(30,true);setTimeout(()=>nx.classList.add('show'),3400)};
+</script></body></html>

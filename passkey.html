@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Passkey ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff3e4;--b:#fbe1c6;--c:#f6d2c0;--ink:#7a4a2a;--hd:#a8452a;--pc:#a08266;--f1:#f6c08a;--f2:#f3a99a}
+.bx{gap:1rem}.bx i{width:1.5rem;height:1.5rem;border:2px solid var(--hd);border-radius:50%;font-size:1rem}
+.gk{border-radius:50%;border-width:1.5px}.gk::before{display:none}
+#rg{position:fixed;left:50%;top:50%;width:0;height:0;z-index:20}
+#rg::before{content:'';position:fixed;inset:0;background:var(--b);opacity:.94;z-index:-1}
+#rg::after{content:'your memories are loading…';position:absolute;top:130px;left:50%;translate:-50% 0;white-space:nowrap;font:500 1.5rem 'Caveat',cursive;color:var(--hd)}
+#rg i{position:absolute;left:0;top:0;transform:rotate(var(--a)) translateY(-95px) rotate(calc(var(--a)*-1));translate:-32px -32px;scale:0;animation:bl .8s cubic-bezier(.3,1.5,.5,1) forwards;font-style:normal}
+#lk{position:relative}#lk::before,#lk::after{content:'';position:absolute;inset:-34px;border-radius:50%;border:2px solid rgba(168,69,42,.3);animation:rp 3s ease-out infinite}#lk::after{animation-delay:1.5s}@keyframes rp{from{scale:.5;opacity:1}to{scale:2.4;opacity:0}}
+</style></head><body data-bg="peach" data-p="18"><main>
+<div class="rise" id="lk" style="font-size:4rem">🔐</div>
+<h2 id="ti" class="rise" style="--i:1">Enter Passkey</h2>
+<div class="bx rise" id="bx" style="--i:2"><i></i><i></i><i></i><i></i></div>
+<small id="m">hint: the day you were born, day then month</small>
+<div class="kp rise" id="kp" style="--i:3"></div>
+<div id="rg" hidden></div>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const m=document.getElementById('m'),ti=document.getElementById('ti');
+keypad(CFG.passkey||'1901',()=>{ti.textContent='Unlocked';ti.style.color='#2f7a4f';m.textContent='';petals(30,true);const r=document.getElementById('rg');r.hidden=false;
+r.innerHTML=[0,1,2,3,4,5,6,7].map(i=>`<i style="--a:${i*45}deg;animation-delay:${i*.12}s">${rose(P(RC),64)}</i>`).join('');setTimeout(()=>go(FLOW[ix+1]+'.html'),3800)},
+()=>{shk(document.getElementById('bx'));m.textContent='wrong passkey, try again 🌸';m.style.color='#b3344f'});
+</script></body></html>

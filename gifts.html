@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The gift box ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff3ee;--b:#ffe3df;--c:#ffd3d6;--ink:#7a4a4a;--hd:#c0455f;--pc:#a88484;--f1:#ffb0b8;--f2:#ffe2a8}
+.box{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;padding:2rem;width:min(520px,92vw);background:linear-gradient(#e0c293,#c9a272);border:4px solid #a77d4b;border-radius:10px;box-shadow:inset 0 0 40px rgba(90,50,10,.35),0 25px 50px -25px rgba(60,30,10,.6)}
+.it{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.2rem;font:700 1.4rem 'Caveat',cursive;color:#5b3a1a;transition:transform .3s}
+.it span{font-size:clamp(3.4rem,14vw,5rem);filter:drop-shadow(3px 6px 4px rgba(0,0,0,.3))}.it:hover{transform:rotate(-5deg) scale(1.1)}
+</style></head><body data-bg="redcheck" data-p="18"><main>
+<p class="cap rise">a little box, packed for you</p>
+<h2 class="rise" style="--i:1">open each one</h2>
+<div class="box rise" id="bg2" style="--i:2"></div>
+<p class="cap" id="k"></p>
+<button class="next" data-hold>onward</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const G=[['📷','memories','cinema'],['💌','a letter','postcard'],['💐','flowers','garden'],['🎁','your turn','notebook']],V=JSON.parse(sessionStorage.getItem('riya_g')||'[]'),k=document.getElementById('k');
+document.getElementById('bg2').innerHTML=G.map(([e,l,p])=>`<button class="it" data-p="${p}"><span>${e}</span>${l}${V.includes(p)?' ✓':''}</button>`).join('');
+document.querySelectorAll('.it').forEach(b=>b.onclick=()=>{const p=b.dataset.p;if(!V.includes(p))V.push(p);sessionStorage.setItem('riya_g',JSON.stringify(V));go(p+'.html')});
+k.textContent=V.length+' / 4 opened';if(V.length>=4){k.textContent='everything opened ✿';nx.classList.add('show')}
+</script></body></html>

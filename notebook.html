@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Write anything ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff5f0;--b:#f7e0e0;--c:#ecd0d6;--ink:#6a3e48;--hd:#a8344f;--pc:#a88084;--f1:#f2a9b4;--f2:#e8c8a0}
+#tx{display:block;width:min(720px,92vw);height:52vh;padding:1.2rem 1.6rem 1rem 3.6rem;font:500 clamp(1.6rem,3.4vw,2.2rem)/2.1 'Caveat',cursive;color:#22356b;background:#fffdf6 linear-gradient(transparent calc(2.1em - 1px),rgba(120,150,210,.4) 0) 0 .6em/100% 2.1em local;border:0;border-left:3px solid rgba(224,110,110,.5);border-radius:6px;box-shadow:0 25px 50px -25px rgba(60,20,30,.5);resize:none;outline:0}
+.ro{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+</style></head><body data-bg="crim" data-p="18"><main>
+<button class="btn back" onclick="go('gifts.html')">← back</button>
+<h2 class="rise">Anything you want to write in this</h2>
+<textarea id="tx" class="rise" style="--i:1" maxlength="1500" placeholder="write whatever is in your heart ✿"></textarea>
+<div class="ro"><button class="btn" id="sv">save</button><button class="btn" id="cp">copy</button><a class="btn" id="wa" target="_blank" rel="noopener" hidden>send it to me</a></div>
+<small id="ms" class="cap"></small>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const tx=document.getElementById('tx'),ms=document.getElementById('ms'),wa=document.getElementById('wa');
+tx.value=localStorage.getItem('riya_note')||'';
+const up=()=>{localStorage.setItem('riya_note',tx.value);wa.href='https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent(tx.value)};
+tx.oninput=up;up();wa.hidden=!CFG.whatsapp;
+document.getElementById('sv').onclick=()=>{up();ms.textContent='saved on this device ✿'};
+document.getElementById('cp').onclick=()=>(navigator.clipboard?navigator.clipboard.writeText(tx.value):Promise.reject()).then(()=>ms.textContent='copied ✿',()=>ms.textContent='press and hold the text to copy it');
+</script></body></html>

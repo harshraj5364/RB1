@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A postcard ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff0ee;--b:#ffe0dc;--c:#f6d6d6;--ink:#7a4044;--hd:#c0384f;--pc:#a87c7c;--f1:#f5aab4;--f2:#ffd9b0}
+#pc{padding:12px;background:repeating-linear-gradient(135deg,#d9455e 0 16px,#fff 16px 32px,#4c78c9 32px 48px,#fff 48px 64px);width:min(760px,94vw);box-shadow:0 25px 50px -25px rgba(60,20,20,.6);rotate:-1deg}
+#pb{position:relative;background:#fffdf6;padding:2.4rem 2rem 1.6rem;text-align:left;color:#22356b;font:500 clamp(1.6rem,3.6vw,2.4rem)/1.6 'Caveat',cursive;min-height:300px}
+#tx{position:relative;margin-top:1rem}#tx p{margin:0 0 .6em;visibility:hidden}
+.stamp{position:absolute;right:1.2rem;top:1rem;border:2px dashed var(--hd);padding:.3rem .6rem;font:700 1.1rem 'Caveat',cursive;color:var(--hd);text-align:center;rotate:4deg;background:#fff}
+.hd2{font:700 1.2rem 'Caveat',cursive;letter-spacing:.3em;color:var(--hd)}
+</style></head><body data-bg="crim" data-p="18"><main>
+<button class="btn back" onclick="go('gifts.html')">← back</button>
+<h2 class="rise">A letter for the prettiest girl in the whole universe</h2>
+<article id="pc" class="rise" style="--i:2"><div id="pb"><div class="stamp">🌸<br>19 Jan</div><span class="hd2">POST CARD</span><div id="tx"></div></div></article>
+<small class="tip">tap the card to finish writing instantly</small>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const t=document.getElementById('tx');t.innerHTML=`<p>To ${CFG.to},</p><p>${CFG.postcard}</p><p>Yours always,</p><p>${CFG.from||'your friend'} ✿</p>`;
+setTimeout(()=>document.fonts.ready.then(()=>write(t)),1800);
+</script></body></html>

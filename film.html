@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The reel ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#f1f6fc;--b:#e3edf8;--c:#dbe6f5;--ink:#4a5f7a;--hd:#e0527f;--pc:#7f95b0;--f1:#f5b5cc;--f2:#bcd6f2}
+.tx{display:flex;gap:1.6rem;align-items:center;justify-content:center;flex-wrap:wrap;text-align:left;width:min(900px,94vw)}.tx p{flex:1 1 300px;font:500 clamp(1.5rem,3vw,2.1rem)/1.5 'Caveat',cursive}
+.fs{position:relative;width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;background:#111;padding:28px 0}
+.fs::before,.fs::after{content:'';position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,#f3f3f3 0 12px,transparent 12px 26px)}.fs::before{top:9px}.fs::after{bottom:9px}
+.rl{display:flex;gap:8px;width:max-content;animation:fm 26s linear infinite}.rl img{width:150px;height:150px;object-fit:cover;filter:grayscale(.25) contrast(1.05)}
+@keyframes fm{to{translate:-50% 0}}
+.pp{position:relative;width:200px;background:#fff;padding:8px 8px 30px;box-shadow:0 12px 24px -12px rgba(0,0,0,.5);rotate:4deg}.pp img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.pp::before{content:'';position:absolute;top:-12px;left:50%;width:90px;height:26px;translate:-50% 0;rotate:-4deg;background:rgba(255,226,120,.8)}
+</style></head><body data-bg="gingham" data-p="18"><main>
+<p class="cap rise">a little look back</p>
+<div class="tx rise" style="--i:1"><p>Here is a small reel of everything that made this year good: the laughs, the late talks, the food, and every ordinary day you made better.</p><div class="pp"><img id="im" alt=""></div></div>
+<div class="fs rise" style="--i:2"><div class="rl" id="rl"></div></div>
+<button class="next" data-after="5000">turn the page</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const A=CFG.polaroids,rl=document.getElementById('rl');
+[...A,...A].forEach((p,i)=>{const m=document.createElement('img');m.alt='';pic(p.src,i%A.length,s=>m.src=s);rl.appendChild(m)});
+pic(A[1].src,1,s=>document.getElementById('im').src=s);
+</script></body></html>

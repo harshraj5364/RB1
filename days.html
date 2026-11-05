@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our days ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff4ee;--b:#ffe4da;--c:#ffd9d9;--ink:#7a4a44;--hd:#d9544a;--pc:#a8847e;--f1:#ffb4a2;--f2:#ffe0a0}
+.big{font:700 clamp(5rem,22vw,13rem)/1 'Caveat',cursive;color:var(--hd)}
+.ch{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.ch div{padding:.8rem 1.4rem;border:2px dashed var(--hd);border-radius:255px 18px 225px 18px/18px 225px 18px 255px;background:rgba(255,255,255,.55)}
+.ch b{display:block;font:700 2.4rem 'Caveat',cursive;color:var(--hd)}
+</style></head><body data-bg="cream" data-p="18"><main>
+<p class="cap rise">room two</p>
+<h2 class="rise" style="--i:1">We have been friends for</h2>
+<div class="big rise" id="n" style="--i:2">0</div>
+<p class="cap rise" id="u" style="--i:3">days</p>
+<div class="ch rise" id="c" style="--i:4"></div>
+<p class="cap rise" style="--i:5">and I counted every single one of them.</p>
+<button class="next" data-after="5200">see our photos</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const d=CFG.friendsSince?Math.floor((Date.now()-new Date(CFG.friendsSince))/864e5):0,n=document.getElementById('n');
+if(d>0){const s=Date.now();(function f(){const p=Math.min(1,(Date.now()-s-1200)/2200);n.textContent=p<0?0:Math.round(d*(1-Math.pow(1-p,3)));p<1&&requestAnimationFrame(f)})();
+document.getElementById('c').innerHTML=[[d/365,'years in'],[d/7,'weekends'],[d/91,'seasons']].map(([v,l])=>`<div><b>${Math.floor(v)}</b>${l}</div>`).join('')}
+else{n.textContent='so many';n.style.fontSize='clamp(3.5rem,14vw,8rem)';document.getElementById('u').textContent='days, I lost count'}
+</script></body></html>

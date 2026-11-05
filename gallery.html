@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The gallery ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fbf5ea;--b:#f2e6d0;--c:#ead9c4;--ink:#6b5238;--hd:#a8742f;--pc:#a08a6a;--f1:#e8c48a;--f2:#f0b6b6}
+#ph{position:relative;width:min(360px,76vw);aspect-ratio:1;background:#eee}
+#ph img,#ph canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cv{transition:opacity .9s;touch-action:none;cursor:grab}
+.nv{display:flex;align-items:center;gap:1.2rem}
+.fr2{background:#f3ead6;border:14px solid #8a5a2b;border-radius:3px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6),inset 0 0 0 4px #c89b5b}
+#cp{background:linear-gradient(#e6c97a,#c79d3a);color:#4a3410;padding:.4rem 1.2rem;border-radius:4px;box-shadow:0 3px 8px rgba(0,0,0,.3);font-weight:700}
+</style></head><body data-bg="cream" data-p="18"><main>
+<p class="cap rise">room three, the gallery</p>
+<h2 class="rise" style="--i:1">Our photos</h2>
+<p class="cap rise" style="--i:2">each one is covered. rub a little and it opens by itself.</p>
+<div class="fr2 rise" style="--i:3"><div id="ph"><img id="im" alt=""><canvas id="cv"></canvas></div></div>
+<p class="cap" id="cp"></p>
+<div class="nv"><button class="btn" id="pv">←</button><span id="ct"></span><button class="btn" id="nt">→</button></div>
+<button class="next" data-hold>keep walking</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+const P4=CFG.photos,im=document.getElementById('im'),cv=document.getElementById('cv'),x=cv.getContext('2d'),cp=document.getElementById('cp'),ct=document.getElementById('ct'),S=360,dn=[];let i=0,dw=0;
+cv.width=cv.height=S;
+function show(k){i=(k+P4.length)%P4.length;pic(P4[i].src,i,s=>im.src=s);cp.textContent=dn[i]?P4[i].cap:'exhibit '+(i+1)+', still hidden';ct.textContent=(i+1)+' / '+P4.length;
+cv.style.opacity=dn[i]?0:1;cv.style.pointerEvents=dn[i]?'none':'auto';
+if(!dn[i]){x.globalCompositeOperation='source-over';const g=x.createLinearGradient(0,0,S,S);g.addColorStop(0,'#f2d7a6');g.addColorStop(1,'#e6b3c1');x.fillStyle=g;x.fillRect(0,0,S,S);x.fillStyle='rgba(110,70,50,.6)';x.font='700 34px Caveat,cursive';x.textAlign='center';x.fillText('rub to reveal ✿',S/2,S/2)}}
+const sc=e=>{const r=cv.getBoundingClientRect();x.globalCompositeOperation='destination-out';x.beginPath();x.arc((e.clientX-r.left)*S/r.width,(e.clientY-r.top)*S/r.height,46,0,7);x.fill()};
+cv.onpointerdown=e=>{dw=1;cv.setPointerCapture(e.pointerId);sc(e)};cv.onpointermove=e=>{if(dw){sc(e);if(++mv%4==0)rv()}};
+let mv=0;const rv=()=>{if(dn[i])return;const d=x.getImageData(0,0,S,S).data;let c=0;for(let p=3;p<d.length;p+=160)if(!d[p])c++;if(c>d.length/160*.1){dn[i]=1;show(i);petals(8,true);if(dn.filter(Boolean).length==P4.length)nx.classList.add('show')}};cv.onpointerup=()=>{dw=0;rv()};
+document.getElementById('pv').onclick=()=>show(i-1);document.getElementById('nt').onclick=()=>show(i+1);
+document.fonts.ready.then(()=>show(0));
+</script></body></html>

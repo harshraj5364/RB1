@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>From me to you ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff3ea;--b:#fde3d3;--c:#f9d6d0;--ink:#7a4a3a;--hd:#a8383f;--pc:#a07a6e;--f1:#f3a99a;--f2:#fbd5a0}
+#cr{position:relative;width:min(560px,92vw);height:300px}
+.sl{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:scale(.96);transition:opacity .8s,transform .8s;pointer-events:none}.sl.on{opacity:1;transform:none}
+.q{font:600 clamp(1.7rem,4vw,2.4rem)/1.5 'Caveat',cursive;max-width:92%}
+mark{padding:0 .2em;border-radius:.3em;background:linear-gradient(transparent 40%,var(--m) 40%);color:inherit}
+#dt{display:flex;gap:.6rem}#dt i{width:10px;height:10px;border-radius:50%;background:var(--hd);opacity:.3;cursor:pointer}#dt i.on{opacity:1}
+</style></head><body data-bg="peach" data-p="18"><main>
+<h1 data-s>From me to you.</h1>
+<p class="cap rise" style="--i:6">this is how much you mean to me</p>
+<div id="cr" class="rise" style="--i:7"><div class="sl on" id="s1"></div><div class="sl"><p class="q">In your <mark style="--m:#f9b4c0">smile</mark>, I found my <mark style="--m:#bfe3c0">peace</mark>.<br>In your <mark style="--m:#f7d38a">friendship</mark>, I found my <mark style="--m:#f9b4c0">home</mark>.</p></div><div class="sl"><p class="q">Thank you for every laugh, every secret and every ordinary day you made feel special.</p></div></div>
+<div id="dt"><i class="on"></i><i></i><i></i></div>
+<button class="next" data-after="7000">keep going</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+document.getElementById('s1').innerHTML=`<div style="position:relative;width:220px;height:270px"><svg viewBox="0 0 220 270" width="220" style="position:absolute;inset:0"><g fill="none" stroke="#7a9a6a" stroke-width="3" stroke-linecap="round"><path d="M80 110C84 170 96 220 110 266"/><path d="M142 100C134 170 124 220 112 266"/><path d="M92 200C66 190 54 170 58 158C80 160 92 178 92 200Z" fill="#cfe6c0"/><path d="M124 210C152 202 164 182 160 170C138 172 126 190 124 210Z" fill="#cfe6c0"/></g></svg><i style="position:absolute;left:22px;top:28px">${rose('#f4a6b6',100)}</i><i style="position:absolute;left:100px;top:14px">${rose('#fff',92)}</i></div>`;
+const sl=[...document.querySelectorAll('.sl')],dt=[...document.querySelectorAll('#dt i')];let c=0;
+const cyc=k=>{c=k%3;sl.forEach((e,i)=>e.classList.toggle('on',i==c));dt.forEach((e,i)=>e.classList.toggle('on',i==c))};
+dt.forEach((e,i)=>e.onclick=()=>cyc(i));setInterval(()=>cyc(c+1),4200);
+</script></body></html>

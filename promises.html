@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The promises ✿</title><link rel="stylesheet" href="common.css"><style>
+body{--a:#fff6ea;--b:#ffe9d2;--c:#ffdcd0;--ink:#6a4a3a;--hd:#c0503a;--pc:#a88a78;--f1:#ffc79a;--f2:#f5b5b5}
+.card{width:min(620px,94vw);text-align:left}
+h3{font:700 2rem 'Caveat',cursive;text-align:center;color:var(--hd)}
+ul{list-style:none;margin:1rem 0}li{margin:.6rem 0}
+label{display:flex;gap:.8rem;align-items:center;cursor:pointer;font-size:1.25rem}
+input[type=checkbox]{width:1.5rem;height:1.5rem;accent-color:var(--hd)}input:checked+span{color:var(--hd);font-weight:700}
+#sg{display:block;width:100%;height:150px;background:rgba(255,255,255,.7);border:2px dashed var(--hd);border-radius:10px;touch-action:none;margin:.4rem 0}
+</style></head><body data-bg="cream" data-p="18"><main>
+<p class="cap rise">the last room</p>
+<h2 class="rise" style="--i:1">Tick each promise, then sign.</h2>
+<div class="card rise" style="--i:2"><h3>Our Friendship Rules</h3><p class="cap" id="bt" style="text-align:center"></p><ul id="ls"></ul><p class="cap">sign here with your finger</p><canvas id="sg" width="560" height="150"></canvas><button class="btn" id="cl">clear</button></div>
+<button class="next" data-hold>renew our friendship</button>
+</main><script src="config.js"></script><script src="common.js"></script><script>
+document.getElementById('bt').textContent='between '+(CFG.from||'me')+' and '+CFG.to;
+document.getElementById('ls').innerHTML=CFG.promises.map(p=>`<li><label><input type="checkbox"><span>${p}</span></label></li>`).join('');
+const ck=[...document.querySelectorAll('#ls input')],c=document.getElementById('sg'),x=c.getContext('2d');let dn=0,len=0,lx,ly;
+x.lineWidth=2.6;x.lineCap='round';x.strokeStyle='#22356b';
+const ok=()=>nx.classList.toggle('show',ck.every(i=>i.checked)&&len>120);
+ck.forEach(i=>i.onchange=ok);
+const pt=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]};
+c.onpointerdown=e=>{dn=1;c.setPointerCapture(e.pointerId);[lx,ly]=pt(e)};
+c.onpointermove=e=>{if(!dn)return;const[a,b]=pt(e);x.beginPath();x.moveTo(lx,ly);x.lineTo(a,b);x.stroke();len+=Math.hypot(a-lx,b-ly);lx=a;ly=b};
+c.onpointerup=()=>{dn=0;ok()};
+document.getElementById('cl').onclick=()=>{x.clearRect(0,0,c.width,c.height);len=0;ok()};
+</script></body></html>
