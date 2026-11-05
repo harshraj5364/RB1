@@ -2,7 +2,7 @@
 const CFG={
   to:'Riya',
   from:'Laddoo',            // your name, shown on letters. '' signs as "your friend"
-  friendsSince:2024-06-15,  // e.g. '2021-06-15' makes the days page count real days. null shows "so many"
+  friendsSince:2024-06-16,  // e.g. '2021-06-15' makes the days page count real days. null shows "so many"
   whatsapp:'919097538872',        // e.g. '919876543210' (country code + number) lets Riya send her note to you
   photos:[            // put pictures in the photos folder; missing ones show a sketch
     {src:'photos/1.jpg',cap:'A day I would replay forever'},
@@ -11,7 +11,7 @@ const CFG={
     {src:'photos/4.jpg',cap:'Still my favourite'}],
   puzzle:'photos/puzzle.jpg',   // the photo that "falls apart"
   cinema:'photos/cinema.jpg',   // the picture on the cinema screen
-  promises:['Reply to each other\'s texts fast','Show up when it matters, without being asked','Keep every secret, forever, no exceptions','Tease each other in private, defend each other in public','Split the last slice, always'],
+  promises:['Reply to each other\'s texts fast (memes count)','Show up when it matters, without being asked','Keep every secret, forever, no exceptions','Tease each other in private, defend each other in public','Split the last slice, always'],
   postcard:'You make ordinary days feel special just by being in them. Your smile brings me peace, your kindness inspires me, and having you in my life makes me feel incredibly lucky. Happy Birthday!',
   passkey:'1901',          // the second lock: her birthday as day + month (19 Jan)
   polaroids:[{src:'photos/p1.jpg',cap:'Us'},{src:'photos/p2.jpg',cap:'That day'},{src:'photos/p3.jpg',cap:'Favourite smile'},{src:'photos/p4.jpg',cap:'Never boring'},{src:'photos/p5.jpg',cap:'Golden hour'},{src:'photos/p6.jpg',cap:'Silly us'},{src:'photos/p7.jpg',cap:'Good times'},{src:'photos/p8.jpg',cap:'Still counting'}],
