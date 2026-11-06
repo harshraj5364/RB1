@@ -1,19 +1,50 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>From me to you ✿</title><link rel="stylesheet" href="common.css"><style>
-body{--a:#fff3ea;--b:#fde3d3;--c:#f9d6d0;--ink:#7a4a3a;--hd:#a8383f;--pc:#a07a6e;--f1:#f3a99a;--f2:#fbd5a0}
-#cr{position:relative;width:min(560px,92vw);height:300px}
-.sl{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:scale(.96);transition:opacity .8s,transform .8s;pointer-events:none}.sl.on{opacity:1;transform:none}
-.q{font:600 clamp(1.7rem,4vw,2.4rem)/1.5 'Caveat',cursive;max-width:92%}
-mark{padding:0 .2em;border-radius:.3em;background:linear-gradient(transparent 40%,var(--m) 40%);color:inherit}
-#dt{display:flex;gap:.6rem}#dt i{width:10px;height:10px;border-radius:50%;background:var(--hd);opacity:.3;cursor:pointer}#dt i.on{opacity:1}
-</style></head><body data-bg="peach" data-p="18"><main>
-<h1 data-s>From me to you.</h1>
-<p class="cap rise" style="--i:6">this is how much you mean to me</p>
-<div id="cr" class="rise" style="--i:7"><div class="sl on" id="s1"></div><div class="sl"><p class="q">In your <mark style="--m:#f9b4c0">smile</mark>, I found my <mark style="--m:#bfe3c0">peace</mark>.<br>In your <mark style="--m:#f7d38a">friendship</mark>, I found my <mark style="--m:#f9b4c0">home</mark>.</p></div><div class="sl"><p class="q">Thank you for every laugh, every secret and every ordinary day you made feel special.</p></div></div>
-<div id="dt"><i class="on"></i><i></i><i></i></div>
-<button class="next" data-after="7000">keep going</button>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>From me to you</title><link rel="stylesheet" href="common.css"><style>
+main{justify-content:flex-start;padding:0;gap:0}
+.sec{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;width:100%;padding:8vh 0}
+#dried{position:fixed;left:0;top:0;width:min(130px,24vw);z-index:5;pointer-events:none;font-size:4.5rem;filter:drop-shadow(4px 6px 6px rgba(0,0,0,.3))}#dried img{width:100%;display:block}
+.hh{font:700 clamp(3rem,9vw,6rem)/1.1 'Dancing Script',cursive;color:#8b2b2b}
+.sub{font:500 clamp(1.3rem,3vw,2rem) 'Caveat',cursive;color:#9a5a50}
+#art{width:min(300px,70vw)}#art img{width:100%}
+.dts{display:flex;gap:.7rem;color:#8b2b2b;font-size:.7rem;align-items:center;opacity:.7}
+.qc{width:min(420px,88vw);background:linear-gradient(#fbf3e4,#f6e6cf);border:1px solid rgba(160,110,70,.2);border-radius:6px;padding:1.6rem 1.4rem;box-shadow:0 14px 30px -18px rgba(120,60,30,.5);position:relative;font:600 clamp(1.4rem,3.4vw,1.9rem)/1.8 'Caveat',cursive;color:#4a2d28}
+.qc::before,.qc::after{content:'♡';position:absolute;color:#e57b8a;font-size:.8rem}.qc::before{left:8px;top:6px}.qc::after{right:8px;bottom:6px}
+mark{background:none;padding:0 .25em;border-radius:3px;color:inherit}
+#lk{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.7rem;color:#a8806a}
+#lki{width:90px;height:90px;border-radius:50%;display:grid;place-items:center;font-size:3.2rem;background:radial-gradient(circle,#fbe9d4,transparent 70%)}#lki img{width:62%}
+#lk small{font:italic 500 .95rem 'Cormorant Garamond',serif;letter-spacing:.06em}
+#md{position:fixed;inset:0;z-index:70;background:linear-gradient(#fbf1dc,#f2d5b5);display:none;flex-direction:column;align-items:center;justify-content:center;gap:.9rem}#md.on{display:flex}
+#x{position:absolute;right:2vw;top:2vh;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.6);color:#6a4a40;font-size:1.1rem;cursor:pointer}
+#lg{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-size:2.6rem;background:radial-gradient(circle,#fdecd8,#f6dcc0);box-shadow:0 0 0 8px rgba(255,255,255,.4);transition:box-shadow .6s}
+#md.ok #lg{box-shadow:0 0 0 8px rgba(80,140,90,.45),0 0 30px 6px rgba(80,140,90,.3)}
+#pt{font:700 clamp(2rem,6vw,2.8rem) 'Dancing Script',cursive;color:#8b2b2b;transition:color .5s}#md.ok #pt{color:#2f6f45}
+#md .bx{gap:1.1rem;position:relative}#md .bx::before{content:'';position:absolute;left:12px;right:12px;top:50%;height:1px;background:#c9b49a}
+#md .bx i{width:20px;height:20px;border-radius:50%;border:1.5px solid #b79d82;background:#f9ecd6;position:relative;z-index:1}
+#md .bx i.f,#md.ok .bx i{background:#2f6f45;border-color:#2f6f45}#md .bx.r i{background:#b3202a;border-color:#b3202a}
+#pm{font:italic 500 .85rem 'Cormorant Garamond',serif;color:#b3202a;min-height:1.3em}
+#md .kp{gap:.9rem 1rem}
+#md .gk{width:clamp(56px,14vw,70px);aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.6);box-shadow:0 6px 16px -8px rgba(120,60,30,.45);font:600 1.5rem 'Cormorant Garamond',serif;color:#4a5a46}#md .gk:active{scale:.92}
+#md.ok .kp{opacity:.45;pointer-events:none}
+#ld{position:fixed;inset:0;z-index:80;background:#f8efd6;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem}#ld.on{display:flex}
+#ld .rg{position:relative;width:120px;height:120px}#ld .rg i{position:absolute;width:52px;height:52px}
+#ld small{font:600 .7rem 'Cormorant Garamond',serif;letter-spacing:.35em;color:#b79d82}
+#ld::before,#ld::after{content:'';position:absolute;width:260px;height:260px;border-radius:50%;border:1px solid rgba(180,150,110,.25);animation:rp 3s ease-out infinite}#ld::after{animation-delay:1.5s}
+@keyframes rp{from{scale:.5;opacity:1}to{scale:2.6;opacity:0}}
+</style></head><body data-bg="peach" data-p="0"><main>
+<div id="dried"></div>
+<section class="sec"><h1 class="hh rv">From me to you.</h1><p class="sub rv">This is how much you mean to me.</p><div id="art" class="rv"></div><div class="dts rv">● ♡ ●</div></section>
+<section class="sec"><div class="qc rv"><p>In your <mark style="background:#f6b7c0">smile</mark>, I found my <mark style="background:#bfe0c4">peace</mark>.</p><p>In your <mark style="background:#f6b7c0">friendship</mark>, I found my <mark style="background:#f0d08a">home</mark>.</p></div></section>
+<section class="sec"><button id="lk" class="rv"><span id="lki">🔐</span><small>tap to open</small></button></section>
+<div id="md"><button id="x">✕</button><div id="lg">🔐</div><h2 id="pt">Enter Passkey</h2><div class="bx" id="bx"><i></i><i></i><i></i><i></i></div><p id="pm"></p><div class="kp" id="kp"></div></div>
+<div id="ld"><div class="rg" id="rg"></div><small>LOADING</small></div>
 </main><script src="config.js"></script><script src="common.js"></script><script>
-document.getElementById('s1').innerHTML=`<div style="position:relative;width:220px;height:270px"><svg viewBox="0 0 220 270" width="220" style="position:absolute;inset:0"><g fill="none" stroke="#7a9a6a" stroke-width="3" stroke-linecap="round"><path d="M80 110C84 170 96 220 110 266"/><path d="M142 100C134 170 124 220 112 266"/><path d="M92 200C66 190 54 170 58 158C80 160 92 178 92 200Z" fill="#cfe6c0"/><path d="M124 210C152 202 164 182 160 170C138 172 126 190 124 210Z" fill="#cfe6c0"/></g></svg><i style="position:absolute;left:22px;top:28px">${rose('#f4a6b6',100)}</i><i style="position:absolute;left:100px;top:14px">${rose('#fff',92)}</i></div>`;
-const sl=[...document.querySelectorAll('.sl')],dt=[...document.querySelectorAll('#dt i')];let c=0;
-const cyc=k=>{c=k%3;sl.forEach((e,i)=>e.classList.toggle('on',i==c));dt.forEach((e,i)=>e.classList.toggle('on',i==c))};
-dt.forEach((e,i)=>e.onclick=()=>cyc(i));setInterval(()=>cyc(c+1),4200);
+ast('dried',s=>$('dried').innerHTML=s?`<img src="${s}" alt="">`:'🥀');
+ast('fromme',s=>$('art').innerHTML=s?`<img src="${s}" alt="">`:'<div style="font-size:5rem;text-align:center">💐</div>');
+ast('locket',s=>{if(s)$('lki').innerHTML=`<img src="${s}" alt="">`});
+rv('.rv');
+const md=$('md');$('lk').onclick=()=>md.classList.add('on');$('x').onclick=()=>md.classList.remove('on');
+keypad({code:CFG.passkey,clear:true,on:()=>md.classList.contains('on'),
+ok:()=>{md.classList.add('ok');$('pt').textContent='Unlocked';$('pm').textContent='';setTimeout(()=>{md.classList.remove('on');$('ld').classList.add('on');
+ Promise.all(['rose1','rose2','rose3'].map(k=>new Promise(r=>ast(k,r)))).then(a=>{const ok=a.filter(Boolean);$('rg').innerHTML=[0,1,2,3,4,5].map(i=>{const t=i*Math.PI/3-Math.PI/2;return `<i class="rs" style="left:${(60+Math.cos(t)*46-26).toFixed(0)}px;top:${(60+Math.sin(t)*46-26).toFixed(0)}px;translate:0 0;--r:0deg;animation-delay:${i*.15}s">${rose(i%2?'#fff':'#f4a6b6',52,ok.length?P(ok):0)}</i>`}).join('')});
+ setTimeout(()=>go(nextUrl()),3200)},1100)},
+bad:b=>{b.classList.add('r');$('pm').textContent='wrong passkey, try again';setTimeout(()=>{b.classList.remove('r');$('pm').textContent=''},1400)}});
 </script></body></html>

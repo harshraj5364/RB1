@@ -1,17 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Our story ✿</title><link rel="stylesheet" href="common.css"><style>
-body{--a:#f6faf0;--b:#e8f1dc;--c:#dcebd6;--ink:#4a5f3a;--hd:#5f8a3f;--pc:#7f9a6a;--f1:#cfe3a8;--f2:#f7d9a6}
-#tl{position:relative;width:min(640px,92vw);text-align:left;padding-left:2.4rem}
-#tl::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:3px;background:repeating-linear-gradient(var(--hd) 0 8px,transparent 8px 14px)}
-.ev2{position:relative;margin:0 0 2.4rem;opacity:0;transform:translateX(-30px);transition:all .9s cubic-bezier(.2,.8,.2,1)}.ev2.in{opacity:1;transform:none}
-.ev2::before{content:'✿';position:absolute;left:-2.5rem;top:0;color:var(--hd);font-size:1.5rem;background:var(--a);border-radius:50%}
-.ev2 h3{font:700 2rem 'Caveat',cursive;color:var(--hd)}
-</style></head><body data-bg="graph" data-p="18"><main>
-<p class="cap rise">a few chapters</p>
-<h2 class="rise" style="--i:1">Our story so far</h2>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Room 5</title><link rel="stylesheet" href="common.css"><style>
+#tl{position:relative;width:min(560px,92vw);text-align:left;padding-left:2.2rem;display:flex;flex-direction:column;gap:1.1rem}
+#tl::before{content:'';position:absolute;left:.55rem;top:.6rem;bottom:.6rem;width:3px;background:linear-gradient(#f59e0b,#e84a3c);border-radius:3px}
+.ev2{position:relative;background:#fff;border-radius:14px;padding:.9rem 1.2rem;box-shadow:0 10px 22px -14px rgba(0,0,0,.35)}
+.ev2::before{content:'';position:absolute;left:-2.1rem;top:1.1rem;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid #e84a3c}
+.ev2 h3{font:800 1.1rem 'Outfit',sans-serif;color:#e8730c}.ev2 p{font:400 .95rem/1.5 'Outfit',sans-serif;color:#4a3b30}
+</style></head><body data-bg="cream" data-p="0"><main>
+<p class="ey">Room 5 · The Timeline</p>
+<h2>How we got <mark class="m">here</mark>.</h2>
 <div id="tl"></div>
-<button class="next" data-hold>turn the page</button>
+<button class="next" data-after="3500">Next room →</button>
 </main><script src="config.js"></script><script src="common.js"></script><script>
-document.getElementById('tl').innerHTML=CFG.timeline.map(e=>`<div class="ev2"><h3>${e.h}</h3><p>${e.t}</p></div>`).join('');
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');if(document.querySelectorAll('.ev2.in').length==CFG.timeline.length)nx.classList.add('show')}}),{threshold:.5});
-document.querySelectorAll('.ev2').forEach(e=>io.observe(e));
+$('tl').innerHTML=CFG.timeline.map(e=>`<div class="ev2 rv"><h3>${e.h}</h3><p>${e.t}</p></div>`).join('');
+rv('.ev2');prog(5);
 </script></body></html>
